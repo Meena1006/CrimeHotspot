@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import AddCrime from './pages/AddCrime';
+import PatrolPlanner from './pages/PatrolPlanner';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       >
         <Route index element={<Dashboard />} />
         <Route path="add-crime" element={<AddCrime />} />
+        <Route path="patrol-planner" element={<PatrolPlanner />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

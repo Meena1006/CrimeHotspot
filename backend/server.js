@@ -5,6 +5,7 @@ const connectDB = require('./database/connection');
 const authRoutes = require('./routes/authRoutes');
 const crimeRoutes = require('./routes/crimeRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
+const patrolRoutes = require('./routes/patrolRoutes');
 
 const app = express();
 
@@ -14,8 +15,8 @@ const autoSeed = require('./seed/autoSeed');
 autoSeed();
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '5mb' }));
+app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 app.get('/', (req, res) => {
   res.json({
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authRoutes);
 app.use('/crime', crimeRoutes);
 app.use('/analytics', analyticsRoutes);
+app.use('/patrol', patrolRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' });

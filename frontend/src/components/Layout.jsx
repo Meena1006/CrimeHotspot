@@ -33,6 +33,13 @@ const Layout = () => {
             <span className="nav-icon">📝</span>
             Add Crime Report
           </NavLink>
+          <NavLink
+            to="/patrol-planner"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
+            <span className="nav-icon">🚓</span>
+            AI Patrol Planner
+          </NavLink>
         </nav>
 
         <div className="sidebar-footer">

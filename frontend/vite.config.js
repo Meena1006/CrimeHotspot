@@ -8,6 +8,7 @@ export default defineConfig({
     proxy: {
       '/auth': 'http://localhost:5000',
       '/crime': 'http://localhost:5000',
+      '/patrol': 'http://localhost:5000',
     },
   },
 });
